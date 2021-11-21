@@ -1,6 +1,6 @@
-# bonjourplatane.fr [![Build](https://github.com/skelz0r/bonjourplatane.fr/actions/workflows/build.yml/badge.svg)](https://github.com/skelz0r/bonjourplatane.fr/actions/workflows/build.yml)
+# bonjournoel.fr [![Build](https://github.com/skelz0r/bonjournoel.fr/actions/workflows/build.yml/badge.svg)](https://github.com/skelz0r/bonjournoel.fr/actions/workflows/build.yml)
 
-Tous les jours, une image de platane.
+Tous les jours de décembre, un sapin et une musique de Noël 🎄 🎅
 
 ## Requirements
 
@@ -33,20 +33,20 @@ Then visit `http://127.0.0.1:4000/`
 Run:
 
 ```sh
-bundle exec ruby bin/generate_platane_post.rb
+bundle exec ruby bin/generate_noel_post.rb
 ```
 
-## Tweet today's platane
+## Tweet today's noel
 
 Check `.env.local` for credentials
 
 Run:
 
 ```sh
-bundle exec ruby bin/tweet_platane.rb `date +%Y-%m-%d`
+bundle exec ruby bin/tweet_noel.rb `date +%Y-%m-%d`
 ```
 
-## Configure Github Action for today platane
+## Configure Github Action for today noel
 
 Add the following secrets:
 
@@ -58,8 +58,4 @@ Add the following secrets:
 
 ## Analytics
 
-👉 https://bonjourplatane.goatcounter.com/
-
-## Credits
-
-Thanks to PrinceCaramel for the (stupid) idea.
+👉 https://bonjournoel.goatcounter.com/
