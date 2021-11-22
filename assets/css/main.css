@@ -7,5 +7,29 @@
 }
 
 body {
-  background-color: var(--green-light);
+  background-color: var(--white);
+}
+
+h1.title {
+  text-align: center;
+}
+
+.christmas-tree .img-wrapper {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  min-height: 600px;
+}
+
+.debat {
+  font-size: 32px;
+}
+
+.debat p {
+  margin: 20px 50px;
+}
+
+.spotify-player {
+  margin-top: 20px;
 }
