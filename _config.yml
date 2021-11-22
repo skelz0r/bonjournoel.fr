@@ -21,7 +21,7 @@
 title: Bonjour Noël 🎄🎅
 # email: contact@bonjournoel.fr
 description: >- # this means to ignore newlines until "baseurl:"
-  Tous les jours de décembre, un sapin et une musique de Noël 🎄🎅
+  Préparer Noël sans préparer Noël
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.bonjournoel.fr" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: BonjourNoel
@@ -31,7 +31,6 @@ lang: "fr"
 language: "fr"
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
 

@@ -380,7 +380,6 @@ DEPENDENCIES
   github-pages
   google-cloud-vision
   jekyll-feed (~> 0.12)
-  minima (~> 2.5.1)
   rspec
   twitter
   tzinfo (~> 1.2)

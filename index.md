@@ -1,11 +1,5 @@
 ---
-list_title: "Les platanes des derniers jours"
+layout: christmas_home
 ---
 
-<h1 class="center">
-  Platane du jour - {% include today_name.html %}
-</h1>
-
-{% include today_image.md %}
-
----
+Hello world!
