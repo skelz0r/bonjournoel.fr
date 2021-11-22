@@ -1,0 +1,11 @@
+:root {
+  --white: rgb(244, 242, 243);
+  --green-light: rgb(169, 191, 172);
+  --green-dark: rgb(39, 67, 50);
+  --red-dark: rgb(95, 29, 23);
+  --red: rgb(215, 78, 72);
+}
+
+body {
+  background-color: var(--green-light);
+}
