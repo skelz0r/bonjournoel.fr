@@ -4,23 +4,23 @@ require 'backend'
 require 'abstract_unique_data_retriever'
 require 'abstract_list_images'
 
-class RecipeUsedList < AbstractListImages
+class DebatUsedList < AbstractListImages
   def file_name
-    'recipes.txt'
+    'debats.txt'
   end
 end
 
-class RecipeRetriever < AbstractUniqueDataRetriever
+class DebatRetriever < AbstractUniqueDataRetriever
   def used_list_class
-    RecipeUsedList
+    DebatUsedList
   end
 
   def retrieve_data
-    @retriever ||= ::Backend::Recipes.new.data
+    @retriever ||= ::Backend::Debats.new.data
     @retriever.sample
   end
 
   def hash_to_store_in_used_list_name(item)
-    item['url']
+    item['content']
   end
 end

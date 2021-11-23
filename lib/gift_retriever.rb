@@ -4,19 +4,19 @@ require 'backend'
 require 'abstract_unique_data_retriever'
 require 'abstract_list_images'
 
-class RecipeUsedList < AbstractListImages
+class GiftUsedList < AbstractListImages
   def file_name
-    'recipes.txt'
+    'gifts.txt'
   end
 end
 
-class RecipeRetriever < AbstractUniqueDataRetriever
+class GiftRetriever < AbstractUniqueDataRetriever
   def used_list_class
-    RecipeUsedList
+    GiftUsedList
   end
 
   def retrieve_data
-    @retriever ||= ::Backend::Recipes.new.data
+    @retriever ||= ::Backend::Gifts.new.data
     @retriever.sample
   end
 

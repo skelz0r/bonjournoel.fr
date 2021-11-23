@@ -18,8 +18,8 @@ class SpotifySongRetriever < AbstractUniqueDataRetriever
   end
 
   def retrieve_data
-    @retrieve_data ||= GetSpotifySong.new(limit: 50, offset: date.day * 10)
-    @retrieve_data.perform
+    @retriever ||= GetSpotifySong.new(limit: 50, offset: date.day * 10)
+    @retriever.perform
   end
 
   def hash_to_store_in_used_list_name(track)

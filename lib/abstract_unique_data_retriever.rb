@@ -3,18 +3,22 @@
 class AbstractUniqueDataRetriever
   attr_reader :date
 
+  class NoDataAvailable < StandardError; end
+
   def initialize(date)
     @date = date
   end
 
   def get
     data = nil
+    i = 0
 
-    # FIXME infinite loop
     loop do
+      i = i+1
       data = retrieve_data
 
       break unless used_list_instance.include?(hash_to_store_in_used_list_name(data))
+      raise NoDataAvailable.new("Try to fetch data #{i} times, there is an issue") if i == 100
     end
 
     used_list_instance.add(hash_to_store_in_used_list_name(data))
