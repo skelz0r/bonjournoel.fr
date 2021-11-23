@@ -27,6 +27,6 @@ class SpotifySongRetriever < AbstractUniqueDataRetriever
       a.name
     end.to_json
 
-    Base64.encode64(key)
+    Base64.urlsafe_encode64(key)
   end
 end
