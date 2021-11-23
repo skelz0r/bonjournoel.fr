@@ -7,6 +7,7 @@ gem "google-cloud-vision"
 gem "google_drive", github: 'gimite/google-drive-ruby'
 gem "twitter"
 gem 'rspotify'
+gem 'rest-client'
 
 group :jekyll_plugins do
   gem "github-pages"

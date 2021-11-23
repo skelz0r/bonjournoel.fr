@@ -441,6 +441,7 @@ DEPENDENCIES
   google-cloud-vision
   google_drive!
   jekyll-feed (~> 0.12)
+  rest-client
   rspec
   rspotify
   twitter
