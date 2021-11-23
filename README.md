@@ -4,7 +4,7 @@ Tous les jours de décembre, un sapin et une musique de Noël 🎄 🎅
 
 ## Requirements
 
-- ruby 3.0.2
+- ruby 2.7.2
 
 ## Install
 
