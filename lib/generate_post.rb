@@ -1,59 +1,75 @@
 require 'date'
 require 'liquid'
 
-require 'human_first_name'
-require 'get_platane_image'
-require 'get_image_owner'
+class GeneratePost
+  attr_reader :date
 
-class GeneratePlatanePost
-  attr_reader :date,
-    :interactive
-
-  def initialize(date, interactive: false)
+  def initialize(date)
     @date = date
-    @interactive = interactive
   end
 
   def perform
-    download_image
     create_post
-    change_today_files
-  end
-
-  def download_image
-    File.open(final_image_path, 'w') { |f| f.write(URI.parse(platane_image['photo_url']).read) }
+    symlink_today_post_to_index
   end
 
   def create_post
     template = Liquid::Template.parse(File.read(post_template))
     variables = {
-      'title' => first_name,
+      'number' => date.day,
       'date' => date.to_time.to_s,
-      'date_formatted' => date_formatted,
-      'user_name' => image_owner['username'],
-      'user_profile_url' => image_owner['url']
+
+      'christmas_tree_image_url' => christmas_tree_image_url,
+      'spotify_track_id' => spotify_track_id,
+      'debat' => debat,
+
+      'gift' => gift_properties,
+      'recipe' => recipe_properties,
     }
     rendered_template = template.render(variables)
 
     File.open(final_post_path, 'w') { |f| f.write(rendered_template) }
   end
 
-  def change_today_files
-    write_today_file(
-      first_name,
-      'today_name.html'
+  def symlink_today_post_to_index
+    File.delete(
+      file_path('../index.html')
     )
 
-    write_today_file(
-      "![#{first_name}](/images/#{date_formatted}.jpg)\n\nCrédits: [#{image_owner['username']}](#{image_owner['url']}) on flickr",
-      'today_image.md'
+    File.symlink(
+      final_post_path,
+      file_path('../index.html')
     )
   end
 
   private
 
-  def write_today_file(content, file_name)
-    File.open(file_path("../_includes/#{file_name}"), 'w') { |f| f.write(content) }
+  def christmas_tree_image_url
+    'https://i0.wp.com/cestquoicebruit.com/wp-content/uploads/2018/12/sapin-noel-deco-addict.png'
+  end
+
+  def spotify_track_id
+    '0bYg9bo50gSsH3LtXe2SQn'
+  end
+
+  def debat
+    "Comment dire à son oncle qu'il est un peu trop saoul ?"
+  end
+
+  def gift_properties
+    {
+      'url' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      'name' => 'Auto cuiseur à riz',
+      'image_url' => 'https://www.maspatule.com/11691-30939-thickbox/cuiseur-a-riz-1l-bestron.jpg',
+    }
+  end
+
+  def recipe_properties
+    {
+      'name' => "La véritable tartiflette de Noël",
+      'url' => 'https://www.marmiton.org/recettes/recette_la-vraie-tartiflette_17634.aspx',
+      'image_url' => 'https://assets.afcdn.com/recipe/20160401/38946_w1024h768c1cx2690cy1793.jpg',
+    }
   end
 
   def post_template
@@ -62,28 +78,10 @@ class GeneratePlatanePost
     )
   end
 
-  def final_image_path
-    file_path(
-      "../images/#{final_image_name}"
-    )
-  end
-
-  def final_image_name
-    "#{date_formatted}.jpg"
-  end
-
   def final_post_path
     file_path(
-      "../_posts/#{date_formatted}-#{sanitize_string(first_name)}.md",
+      "../_posts/#{date_formatted}-jour-#{date.day}.md",
     )
-  end
-
-  def sanitize_string(string)
-    string
-      .gsub(/^.*(\\|\/)/, '')
-      .gsub(/[éèê]/, 'e')
-      .gsub(/[^0-9A-Za-z.\-]/, '_')
-      .downcase
   end
 
   def file_path(path)
@@ -97,17 +95,5 @@ class GeneratePlatanePost
 
   def date_formatted
     date.strftime('%Y-%m-%d')
-  end
-
-  def image_owner
-    @image_owner ||= GetImageOwner.new(platane_image['user_id']).perform
-  end
-
-  def platane_image
-    @platane_image ||= GetPlataneImage.new(interactive: interactive).perform
-  end
-
-  def first_name
-    @first_name ||= HumanFirstName.new(date).get
   end
 end

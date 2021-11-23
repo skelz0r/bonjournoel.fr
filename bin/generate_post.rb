@@ -22,6 +22,6 @@ end
 
 $LOAD_PATH.unshift(lib_path)
 
-require 'generate_platane_post'
+require 'generate_post'
 
-GeneratePlatanePost.new(date, interactive: interative).perform
+GeneratePost.new(date).perform
