@@ -3,7 +3,7 @@ require 'base64'
 json_path = File.expand_path(
   File.join(
     File.dirname(__FILE__),
-    '../secrets/google-vision.json'
+    '../secrets/google-credentials.json'
   )
 )
 

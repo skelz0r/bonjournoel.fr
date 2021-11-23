@@ -4,6 +4,7 @@ gem "jekyll-feed", "~> 0.12"
 gem 'webrick'
 gem "dotenv"
 gem "google-cloud-vision"
+gem "google_drive", github: 'gimite/google-drive-ruby'
 gem "twitter"
 
 group :jekyll_plugins do

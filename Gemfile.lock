@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/gimite/google-drive-ruby.git
+  revision: 55b996b2c287cb0932824bf2474248a498469328
+  specs:
+    google_drive (3.0.7)
+      google-apis-drive_v3 (>= 0.5.0, < 1.0.0)
+      google-apis-sheets_v4 (>= 0.4.0, < 1.0.0)
+      googleauth (>= 0.5.0, < 1.0.0)
+      nokogiri (>= 1.5.3, < 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -20,15 +30,16 @@ GEM
     concurrent-ruby (1.1.9)
     crack (0.4.5)
       rexml
+    declarative (0.0.20)
     diff-lcs (1.4.4)
     dnsruby (1.61.7)
       simpleidn (~> 0.1)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
-    em-websocket (0.5.2)
+    em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
-      http_parser.rb (~> 0.6.0)
+      http_parser.rb (~> 0)
     equalizer (0.0.11)
     ethon (0.15.0)
       ffi (>= 1.15.0)
@@ -66,7 +77,7 @@ GEM
       googleauth (>= 0.17.0, < 2.a)
       grpc (~> 1.36)
     gemoji (3.0.1)
-    github-pages (221)
+    github-pages (222)
       github-pages-health-check (= 1.17.9)
       jekyll (= 3.9.0)
       jekyll-avatar (= 0.7.0)
@@ -116,6 +127,19 @@ GEM
       octokit (~> 4.0)
       public_suffix (>= 3.0, < 5.0)
       typhoeus (~> 1.3)
+    google-apis-core (0.4.1)
+      addressable (~> 2.5, >= 2.5.1)
+      googleauth (>= 0.16.2, < 2.a)
+      httpclient (>= 2.8.1, < 3.a)
+      mini_mime (~> 1.0)
+      representable (~> 3.0)
+      retriable (>= 2.0, < 4.a)
+      rexml
+      webrick
+    google-apis-drive_v3 (0.16.0)
+      google-apis-core (>= 0.4, < 2.a)
+    google-apis-sheets_v4 (0.10.0)
+      google-apis-core (>= 0.4, < 2.a)
     google-cloud-core (1.6.0)
       google-cloud-env (~> 1.0)
       google-cloud-errors (~> 1.0)
@@ -129,24 +153,24 @@ GEM
     google-cloud-vision-v1 (0.6.3)
       gapic-common (>= 0.7, < 2.a)
       google-cloud-errors (~> 1.0)
-    google-cloud-vision-v1p3beta1 (0.5.3)
+    google-cloud-vision-v1p3beta1 (0.5.4)
       gapic-common (>= 0.7, < 2.a)
       google-cloud-errors (~> 1.0)
-    google-protobuf (3.19.0-x86_64-darwin)
+    google-protobuf (3.19.1-x86_64-darwin)
     googleapis-common-protos (1.3.12)
       google-protobuf (~> 3.14)
       googleapis-common-protos-types (~> 1.2)
       grpc (~> 1.27)
     googleapis-common-protos-types (1.3.0)
       google-protobuf (~> 3.14)
-    googleauth (1.0.0)
+    googleauth (0.17.1)
       faraday (>= 0.17.3, < 2.0)
       jwt (>= 1.4, < 3.0)
       memoist (~> 0.16)
       multi_json (~> 1.11)
       os (>= 0.9, < 2.0)
-      signet (>= 0.16, < 2.a)
-    grpc (1.41.0-universal-darwin)
+      signet (~> 0.15)
+    grpc (1.41.1-universal-darwin)
       google-protobuf (~> 3.17)
       googleapis-common-protos-types (~> 1.0)
     hashdiff (1.0.1)
@@ -164,6 +188,7 @@ GEM
     http-parser (1.2.3)
       ffi-compiler (>= 1.0, < 2.0)
     http_parser.rb (0.6.0)
+    httpclient (2.8.3)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jekyll (3.9.0)
@@ -285,6 +310,7 @@ GEM
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     mercenary (0.3.6)
+    mini_mime (1.1.2)
     minima (2.5.1)
       jekyll (>= 3.5, < 5.0)
       jekyll-feed (~> 0.9)
@@ -298,7 +324,7 @@ GEM
     octokit (4.21.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
-    os (1.1.1)
+    os (1.1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -307,6 +333,11 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    representable (3.1.1)
+      declarative (< 0.1.0)
+      trailblazer-option (>= 0.1.1, < 0.2.0)
+      uber (< 0.2.0)
+    retriable (3.1.2)
     rexml (3.2.5)
     rouge (3.26.0)
     rspec (3.10.0)
@@ -321,7 +352,7 @@ GEM
     rspec-mocks (3.10.2)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
-    rspec-support (3.10.2)
+    rspec-support (3.10.3)
     ruby-enum (0.9.0)
       i18n
     ruby2_keywords (0.0.5)
@@ -346,6 +377,7 @@ GEM
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     thread_safe (0.3.6)
+    trailblazer-option (0.1.2)
     twitter (7.0.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -361,6 +393,7 @@ GEM
       ethon (>= 0.9.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    uber (0.1.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8)
@@ -370,7 +403,7 @@ GEM
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
     webrick (1.7.0)
-    zeitwerk (2.5.0)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   x86_64-darwin-20
@@ -379,6 +412,7 @@ DEPENDENCIES
   dotenv
   github-pages
   google-cloud-vision
+  google_drive!
   jekyll-feed (~> 0.12)
   rspec
   twitter
