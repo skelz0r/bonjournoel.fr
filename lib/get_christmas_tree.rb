@@ -6,6 +6,8 @@ require 'dotenv/load'
 require 'rest-client'
 
 class GetChristmasTree
+  attr_reader :page
+
   def initialize(page: 1)
     @page = page
   end
@@ -28,6 +30,8 @@ class GetChristmasTree
     if response.code == 200
       json = JSON.parse(response.body)
       json['results']
+    else
+      []
     end
   end
 

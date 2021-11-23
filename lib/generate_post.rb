@@ -1,6 +1,7 @@
 require 'date'
 require 'liquid'
 
+require 'christmas_tree_retriever'
 require 'gift_retriever'
 require 'debat_retriever'
 require 'recipe_retriever'
@@ -50,7 +51,7 @@ class GeneratePost
   private
 
   def christmas_tree_image_url
-    'https://i0.wp.com/cestquoicebruit.com/wp-content/uploads/2018/12/sapin-noel-deco-addict.png'
+    ChristmasTreeRetriever.new(date).get['urls']['regular']
   end
 
   def spotify_track_id
