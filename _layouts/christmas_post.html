@@ -3,23 +3,12 @@ layout: christmas
 ---
 
 <div class="container-fluid">
-  <h1 class="title">
-    Bonjour Noël
+  <h1 class="main-title center">
+    <img src="/assets/images/title.png" alt="Bonjour Noël" />
   </h1>
 
-  <div class="row">
-    <div class="christmas-tree col-sm-6">
-      <div class="img-wrapper" style="background-image: url('{{ page.christmas_tree_image_url }}')"></div>
-    </div>
-    <div class="debat col-sm-6">
-      <p>
-        {{ page.debat }}
-      </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="spotify-player col-xs-12">
+  <div class="row spotify-player block">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
       <iframe
         src="https://open.spotify.com/embed/track/{{ page.spotify_track_id }}?utm_source=generator&theme=0"
         width="100%"
@@ -31,29 +20,76 @@ layout: christmas
     </div>
   </div>
 
-  <div class="row">
-    <div class="gift-image-url col-sm-6">
-      <img src="{{ page.gift_image_url }}" />
+  <div class="row block">
+    <div class="christmas-tree col-sm-6">
+      <img class="picture" src="{{ page.christmas_tree_image_url }}" />
     </div>
-    <div class="gift-text col-sm-6">
+
+    <div class="center debat col-sm-6">
+      <div class="vertical-align">
+        <div class="wrapper">
+          <h2>
+            Des oh oh oh et des débats
+          </h2>
+
+          <p class="big">
+            “ {{ page.debat }} ”
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row gift block">
+    <div class="center col-sm-6">
+      <div class="vertical-align">
+        <div class="wrapper">
+          <h2>
+            Ça c'est cadeau !
+          </h2>
+          <p class="big">
+            <a href="{{ page.gift_url }}">
+              {{ page.gift_name }}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
       <a href="{{ page.gift_url }}">
-        Le super cadeau !
+        <img class="picture" src="{{ page.gift_image_url }}" />
       </a>
     </div>
   </div>
 
-  <div class="row">
-    <div class="recipe-text col-sm-6">
-      {{ page.recipe_name }}
-
-      <br />
-
+  <div class="row recipe block">
+    <div class="hide-xs col-sm-6">
       <a href="{{ page.recipe_url }}">
-        Voir la recette
+        <img class="picture" src="{{ page.recipe_image_url }}" />
       </a>
     </div>
-    <div class="recipe-image col-sm-6">
-      <img src="{{ page.recipe_image_url }}" />
+
+    <div class="recipe-text center col-sm-6">
+      <div class="vertical-align">
+        <div class="wrapper">
+          <h2>
+            Au four et au sapin
+          </h2>
+
+          <p class="big">
+            <a href="{{ page.recipe_url }}">
+              {{ page.recipe_name }}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hide-md col-sm-6">
+      <a href="{{ page.recipe_url }}">
+        <img class="picture" src="{{ page.recipe_image_url }}" />
+      </a>
     </div>
   </div>
 </div>

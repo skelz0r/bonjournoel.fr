@@ -4,32 +4,91 @@
   --green-dark: rgb(39, 67, 50);
   --red-dark: rgb(95, 29, 23);
   --red: rgb(215, 78, 72);
+  --radius: 10px;
 }
 
 body {
   background-color: var(--white);
 }
 
-h1.title {
+img {
+  max-width: 100%;
+}
+
+.center {
   text-align: center;
 }
 
-.christmas-tree .img-wrapper {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  min-height: 600px;
+.block {
+  margin-bottom: 20px;
 }
 
-.debat {
-  font-size: 32px;
+h2 {
+  color: var(--green-dark);
 }
 
-.debat p {
+h1 img {
+  max-width: 500px;
+  width: 100%;
+}
+
+p.big {
+  font-size: 36px;
   margin: 20px 50px;
 }
 
-.spotify-player {
-  margin-top: 20px;
+p.big a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p.big a:hover {
+  opacity: 0.8;
+}
+
+img.picture {
+  border-radius: var(--radius);
+}
+
+.debat p {
+  color: var(--green-light)
+}
+
+.gift p {
+  color: var(--green-dark)
+}
+
+.recipe p {
+  color: var(--green-dark)
+}
+
+.spotify-player iframe {
+  border-radius: var(--radius);
+}
+
+@media (min-width: 576px) {
+  .hide-md {
+    display: none;
+  }
+
+  .vertical-align {
+    height: 100%;
+    display: inline-flex;
+  }
+
+  .vertical-align > .wrapper {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .hide-xs {
+    display: none;
+  }
+
+  img.picture {
+    max-width: calc(100% - 1rem);
+    margin-left: 0.5rem;
+  }
 }
