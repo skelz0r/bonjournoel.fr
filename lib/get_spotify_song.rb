@@ -4,7 +4,12 @@ require 'dotenv/load'
 require 'rspotify'
 
 class GetSpotifySong
-  def initialize
+  attr_reader :limit, :offset
+
+  def initialize(limit: 10, offset: 50)
+    @limit = limit
+    @offset = offset
+
     authenticate
   end
 
@@ -17,8 +22,8 @@ class GetSpotifySong
       'christmas',
       {
         market: 'FR',
-        limit: 10,
-        offset: 500,
+        limit: limit,
+        offset: offset,
       },
     )
   end

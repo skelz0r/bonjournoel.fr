@@ -23,8 +23,14 @@ class AbstractListImages
   private
 
   def initialize
+    create_file_if_not_exists!
     load_backend!
     super
+  end
+
+  def create_file_if_not_exists!
+    return if File.exist?(file_path)
+    File.write(file_path, '')
   end
 
   def load_backend!
