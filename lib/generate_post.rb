@@ -1,6 +1,11 @@
 require 'date'
 require 'liquid'
 
+require 'gift_retriever'
+require 'debat_retriever'
+require 'recipe_retriever'
+require 'spotify_song_retriever'
+
 class GeneratePost
   attr_reader :date
 
@@ -49,27 +54,19 @@ class GeneratePost
   end
 
   def spotify_track_id
-    '0bYg9bo50gSsH3LtXe2SQn'
+    SpotifySongRetriever.new(date).get.id
   end
 
   def debat
-    "Comment dire à son oncle qu'il est un peu trop saoul ?"
+    DebatRetriever.new(date).get['content']
   end
 
   def gift_properties
-    {
-      'url' => 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-      'name' => 'Auto cuiseur à riz',
-      'image_url' => 'https://www.maspatule.com/11691-30939-thickbox/cuiseur-a-riz-1l-bestron.jpg',
-    }
+    GiftRetriever.new(date).get
   end
 
   def recipe_properties
-    {
-      'name' => "La véritable tartiflette de Noël",
-      'url' => 'https://www.marmiton.org/recettes/recette_la-vraie-tartiflette_17634.aspx',
-      'image_url' => 'https://assets.afcdn.com/recipe/20160401/38946_w1024h768c1cx2690cy1793.jpg',
-    }
+    RecipeRetriever.new(date).get
   end
 
   def post_template
