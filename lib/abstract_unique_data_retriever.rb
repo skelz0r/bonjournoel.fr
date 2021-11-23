@@ -10,11 +10,11 @@ class AbstractUniqueDataRetriever
   def get
     data = nil
 
+    # FIXME infinite loop
     loop do
       data = retrieve_data
 
       break unless used_list_instance.include?(hash_to_store_in_used_list_name(data))
-      raise 'No more data' if data.nil?
     end
 
     used_list_instance.add(hash_to_store_in_used_list_name(data))
