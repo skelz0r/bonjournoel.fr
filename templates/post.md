@@ -12,12 +12,13 @@ spotify_track_id: {{ spotify_track_id }}
 gift_name: {{ gift.name }}
 gift_url: {{ gift.url }}
 gift_image_url: {{ gift.image_url }}
+gift_tags: [{{ gift.tags }}]
 
 recipe_name: {{ recipe.name }}
 recipe_url: {{ recipe.url }}
 recipe_image_url: {{ recipe.image_url }}
+recipe_tags: [{{ recipe.tags }}]
 ---
-
 {% raw %}
 {{ content }}
 {% endraw %}

@@ -51,6 +51,13 @@ layout: christmas
             <a href="{{ page.gift_url }}">
               {{ page.gift_name }}
             </a>
+            <ul class="tags">
+              {% for tag in page.gift_tags %}
+                <li>
+                  {{ tag }}
+                </li>
+              {% endfor %}
+            </ul>
           </p>
         </div>
       </div>
@@ -81,6 +88,14 @@ layout: christmas
             <a href="{{ page.recipe_url }}">
               {{ page.recipe_name }}
             </a>
+
+            <ul class="tags">
+              {% for tag in page.recipe_tags %}
+                <li>
+                  {{ tag }}
+                </li>
+              {% endfor %}
+            </ul>
           </p>
         </div>
       </div>

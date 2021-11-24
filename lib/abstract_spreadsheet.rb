@@ -8,7 +8,11 @@ class AbstractSpreadsheet
       data = {}
 
       headers.to_a.each_with_index do |header, i|
-        data[header] = row[i]
+        if headers == 'tags'
+          data[header] = row[i].split(',').map(&:strip)
+        else
+          data[header] = row[i]
+        end
       end
 
       data

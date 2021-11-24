@@ -46,6 +46,22 @@ p.big a:hover {
   opacity: 0.8;
 }
 
+ul.tags {
+  list-style: none;
+  padding: 0;
+}
+
+ul.tags li {
+  display: block;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+ul.tags li:before {
+  content: '#';
+  margin-right: -5px;
+}
+
 img.picture {
   border-radius: var(--radius);
 }
