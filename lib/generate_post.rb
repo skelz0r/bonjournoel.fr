@@ -42,10 +42,12 @@ class GeneratePost
       file_path('../index.html')
     )
 
-    File.symlink(
-      final_post_path,
-      file_path('../index.html')
-    )
+    Dir.chdir(file_path('../')) do
+      File.symlink(
+        "_posts/#{final_post_name}",
+        'index.html'
+      )
+    end
   end
 
   private
@@ -78,8 +80,12 @@ class GeneratePost
 
   def final_post_path
     file_path(
-      "../_posts/#{date_formatted}-jour-#{date.day}.md",
+      "../_posts/#{final_post_name}"
     )
+  end
+
+  def final_post_name
+    "#{date_formatted}-jour-#{date.day}.md"
   end
 
   def file_path(path)
