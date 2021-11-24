@@ -18,7 +18,7 @@ class AbstractUniqueDataRetriever
       data = retrieve_data
 
       break unless used_list_instance.include?(hash_to_store_in_used_list_name(data))
-      raise NoDataAvailable.new("Try to fetch data #{i} times, there is an issue") if i == 100
+      raise NoDataAvailable.new("#{self.class.name}: Try to fetch data #{i} times, there is an issue") if i == 100
     end
 
     used_list_instance.add(hash_to_store_in_used_list_name(data))
