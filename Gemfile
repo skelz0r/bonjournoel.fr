@@ -8,6 +8,7 @@ gem "google_drive", github: 'gimite/google-drive-ruby'
 gem "twitter"
 gem 'rspotify'
 gem 'rest-client'
+gem 'themoviedb-api', github: 'skelz0r/themoviedb-api'
 
 group :jekyll_plugins do
   gem "github-pages"
