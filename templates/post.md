@@ -18,6 +18,10 @@ recipe_name: {{ recipe.name }}
 recipe_url: {{ recipe.url }}
 recipe_image_url: {{ recipe.image_url }}
 recipe_tags: [{{ recipe.tags }}]
+
+movie_name: {{ movie.name }}
+movie_url: {{ movie.imdb_url }}
+movie_image_url: {{ movie.image_url }}
 ---
 {% raw %}
 {{ content }}

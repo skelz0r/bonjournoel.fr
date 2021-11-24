@@ -2,6 +2,7 @@ require 'date'
 require 'liquid'
 
 require 'christmas_tree_retriever'
+require 'christmas_movie_retriever'
 require 'gift_retriever'
 require 'debat_retriever'
 require 'recipe_retriever'
@@ -31,6 +32,7 @@ class GeneratePost
 
       'gift' => gift_properties,
       'recipe' => recipe_properties,
+      'movie' => christmas_movie_properties,
     }
     rendered_template = template.render(variables)
 
@@ -70,6 +72,10 @@ class GeneratePost
 
   def recipe_properties
     RecipeRetriever.new(date).get
+  end
+
+  def christmas_movie_properties
+    ChristmasMovieRetriever.new(date).get
   end
 
   def post_template
