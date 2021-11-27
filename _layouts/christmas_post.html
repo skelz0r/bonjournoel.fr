@@ -3,54 +3,146 @@ layout: christmas
 ---
 
 <div class="container-fluid">
-  <h1 class="main-title center">
-    <img src="/assets/images/title.png" alt="Bonjour Noël" />
-  </h1>
+  <div class="row block first">
+    <div class="col-xs-12">
+      <h1 class="top-block center">
+        <img src="/assets/images/title.svg" alt="Bonjour Noël" />
 
-  <div class="row spotify-player block">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <iframe
-        src="https://open.spotify.com/embed/track/{{ page.spotify_track_id }}?utm_source=generator&theme=0"
-        width="100%"
-        height="80"
-        frameBorder="0"
-        allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-      </iframe>
+        <div class="countdown">
+          J-{{ page.countdown }}
+        </div>
+      </h1>
+
+      <div class="row middle-block">
+        <div class="col-xs-12">
+          <div class="row line-container">
+            <div class="col-sm-offset-4">
+            </div>
+            <div class="col-sm-4">
+              {% include line.html %}
+            </div>
+          </div>
+
+          <div class="row subtitle">
+            <div class="col-sm-offset-3">
+            </div>
+            <div class="col-sm-1">
+              {% include star.html %}
+            </div>
+            <div class="col-sm-4">
+              your daily dose of christmas porn
+            </div>
+            <div class="col-sm-1">
+              {% include star.html %}
+            </div>
+            <div class="col-sm-3">
+            </div>
+          </div>
+
+          <div class="row line-container">
+            <div class="col-sm-offset-4">
+            </div>
+            <div class="col-sm-4">
+              {% include line.html %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row last-block down-arrow-wrapper">
+        <div class="col-sm-12">
+          <img class="bounce" onclick="scrollBottom()" src="/assets/images/down-arrow.svg">
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="row block">
-    <div class="christmas-tree col-sm-4 col-sm-offset-2">
-      <img class="picture" src="{{ page.christmas_tree_image_url }}" />
+  <div class="row hide-md spotify-player">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+          <iframe
+            src="https://open.spotify.com/embed/track/{{ page.spotify_track_id }}?utm_source=generator&theme=0"
+            width="100%"
+            height="80"
+            frameBorder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row block center christmas-tree-and-debat">
+    <div class="col-sm-2 star">
+      <div class="bottom-align">
+        <div class="wrapper">
+          {% include star.html %}
+        </div>
+      </div>
+    </div>
+
+    <div class="christmas-tree col-sm-4">
+      <div class="vertical-align">
+        <div class="wrapper">
+          <img class="picture" src="{{ page.christmas_tree_image_url }}" />
+        </div>
+      </div>
     </div>
 
     <div class="center debat col-sm-4">
       <div class="vertical-align">
         <div class="wrapper">
           <h2>
-            Des oh oh oh et des débats
+            Des <em>oh oh oh</em> et des débats
           </h2>
 
+          {% include line.html %}
+
           <p class="big">
-            “ {{ page.debat }} ”
+            « {{ page.debat }} »
           </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-2 star">
+      <div class="top-align">
+        <div class="wrapper">
+          {% include star.html %}
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row gift block">
-    <div class="center col-sm-4 col-sm-offset-2">
+  <div class="row center gift block">
+    <div class="col-sm-4 col-sm-offset-2">
       <div class="vertical-align">
         <div class="wrapper">
           <h2>
-            Ça c'est cadeau !
+            Ça c'est <em>cadeau !</em>
           </h2>
+
+          <div class="hide-md vertical-align">
+            <div class="wrapper">
+              <a href="{{ page.gift_url }}">
+                <img class="picture" src="{{ page.gift_image_url }}" />
+              </a>
+            </div>
+          </div>
+
+          {% include line.html %}
+
           <p class="big">
-            <a href="{{ page.gift_url }}">
-              {{ page.gift_name }}
+            « {{ page.gift_name }} »
+          </p>
+
+          <p>
+            <a class="cta" href="{{ page.gift_url }}">
+              voir le cadeau
             </a>
+
             <ul class="tags">
               {% for tag in page.gift_tags %}
                 <li>
@@ -63,30 +155,54 @@ layout: christmas
       </div>
     </div>
 
-    <div class="col-sm-4">
-      <a href="{{ page.gift_url }}">
-        <img class="picture" src="{{ page.gift_image_url }}" />
-      </a>
+    <div class="col-sm-4 hide-xs">
+      <div class="vertical-align">
+        <div class="wrapper">
+          <a href="{{ page.gift_url }}">
+            <img class="picture" src="{{ page.gift_image_url }}" />
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="row recipe block">
     <div class="hide-xs col-sm-4 col-sm-offset-2">
-      <a href="{{ page.recipe_url }}">
-        <img class="picture" src="{{ page.recipe_image_url }}" />
-      </a>
+      <div class="vertical-align">
+        <div class="wrapper">
+          <a href="{{ page.recipe_url }}">
+            <img class="picture" src="{{ page.recipe_image_url }}" />
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="recipe-text center col-sm-4">
       <div class="vertical-align">
         <div class="wrapper">
           <h2>
-            Au four et au sapin
+            Au four et au <em>sapin</em>
           </h2>
 
+          <div class="hide-md col-sm-6">
+            <div class="vertical-align">
+              <div class="wrapper">
+                <a href="{{ page.recipe_url }}">
+                  <img class="picture" src="{{ page.recipe_image_url }}" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {% include line.html %}
+
           <p class="big">
-            <a href="{{ page.recipe_url }}">
-              {{ page.recipe_name }}
+            {{ page.recipe_name }}
+          </p>
+
+          <p>
+            <a class="cta" href="{{ page.recipe_url }}">
+              voir la recette
             </a>
 
             <ul class="tags">
@@ -101,33 +217,82 @@ layout: christmas
       </div>
     </div>
 
-    <div class="hide-md col-sm-6">
-      <a href="{{ page.recipe_url }}">
-        <img class="picture" src="{{ page.recipe_image_url }}" />
-      </a>
+    <div class="col-sm-2 star">
+      <div class="top-align">
+        <div class="wrapper">
+          {% include star.html %}
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="row movie block">
-    <div class="center col-sm-4 col-sm-offset-2">
+    <div class="col-sm-2 star">
+      <div class="top-align">
+        <div class="wrapper">
+          {% include star.html %}
+        </div>
+      </div>
+    </div>
+
+    <div class="center col-sm-4">
       <div class="vertical-align">
         <div class="wrapper">
           <h2>
-            Pour chiller sous la couette
+            Popcorn de <em>traineau</em>
           </h2>
+
+          {% include line.html %}
+
+          <div class="col-sm-4 hide-md">
+            <div class="vertical-align">
+              <div class="wrapper">
+                <a href="{{ page.movie_url }}">
+                  <img class="picture" src="{{ page.movie_image_url }}" />
+                </a>
+              </div>
+            </div>
+          </div>
+
           <p class="big">
-            <a href="{{ page.movie_url }}">
-              {{ page.movie_name }}
+            {{ page.movie_name }}
+          </p>
+
+          <p>
+            <a class="cta" href="{{ page.movie_url }}">
+              voir le film
             </a>
+
+            <ul class="tags">
+              {% for tag in page.movie_tags %}
+                <li>
+                  {{ tag }}
+                </li>
+              {% endfor %}
+            </ul>
           </p>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-4">
-      <a href="{{ page.movie_url }}">
-        <img class="picture" src="{{ page.movie_image_url }}" />
-      </a>
+    <div class="col-sm-4 hide-xs">
+      <div class="vertical-align">
+        <div class="wrapper">
+          <a href="{{ page.movie_url }}">
+            <img class="picture" src="{{ page.movie_image_url }}" />
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<script>
+  function scrollBottom() {
+    window.scroll({
+      top: window.innerHeight,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }
+</script>

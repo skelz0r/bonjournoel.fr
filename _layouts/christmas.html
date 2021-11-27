@@ -5,14 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" integrity="sha512-YHuwZabI2zi0k7c9vtg8dK/63QB0hLvD4thw44dFo/TfBFVVQOqEG9WpviaEpbyvgOIYLXF1n7xDUfU3GDs0sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ "/assets/css/fonts.css" | relative_url }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "assets/images/favicon/apple-touch-icon.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "assets/images/favicon/favicon-32x32.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "assets/images/favicon/favicon-16x16.png" | relative_url }}">
+    <link rel="manifest" href="{{ "assets/images/favicon/site.webmanifest" | relative_url }}">
+    <link rel="mask-icon" href="{{ "assets/images/favicon/safari-pinned-tab.svg" | relative_url }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     {%- seo -%}
-		{%- feed_meta -%}
+    {%- feed_meta -%}
 
-    <title>{{ site.title }}</title>
+    <meta property="og:image" content="{{ "/assets/images/meta.png" | relative_url }}" />
+
+    <title>
+      {{ site.title }}
+    </title>
   </head>
 
   <body>
@@ -21,15 +34,15 @@
     <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
     <script>
       new Snowflakes({
-        color: '#a9bfac'
-      });
+              color: '#a9bfac'
+            });
     </script>
 
     {%- if jekyll.environment == 'production' -%}
     <script
-      data-goatcounter="https://bonjournoel.goatcounter.com/count"
-      async
-      src="//gc.zgo.at/count.js">
+        data-goatcounter="https://bonjournoel.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js">
     </script>
     {%- endif -%}
   </body>

@@ -1,6 +1,5 @@
 ---
 layout: christmas_post
-title: Jour {{ number }}
 date: {{ date }}
 
 christmas_tree_image_url: {{ christmas_tree_image_url }}
@@ -22,6 +21,7 @@ recipe_tags: [{{ recipe.tags }}]
 movie_name: {{ movie.name }}
 movie_url: {{ movie.imdb_url }}
 movie_image_url: {{ movie.image_url }}
+movie_tags: [{{ movie.tags }}]
 ---
 {% raw %}
 {{ content }}
