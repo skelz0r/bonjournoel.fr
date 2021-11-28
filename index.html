@@ -6,10 +6,6 @@ layout: default
     line-height: 2;
   }
 
-  .spotify-player {
-    margin-top: 30px;
-  }
-
   @media (min-width: 576px) {
     .block.first .top-block {
       --h: 25vh;
@@ -52,6 +48,10 @@ layout: default
     .first .line-svg {
       display: inline-block;
     }
+  }
+
+  .twitter-button {
+    text-align: center;
   }
 </style>
 
@@ -100,6 +100,13 @@ layout: default
 
       <div class="row last-block">
         <div class="col-xs-12">
+          <div class="twitter-button">
+            <a href="https://twitter.com/bonjournoel?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="true" data-size="large">
+              Follow @bonjournoel
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+
           <div class="row spotify-player">
             <div class="col-xs-12">
               <div class="row">
