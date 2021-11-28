@@ -17,7 +17,7 @@ class ChristmasMovieRetriever < AbstractUniqueDataRetriever
 
   def retrieve_data
     @retriever ||= ::Backend::ChristmasMovies.new.data
-    @retriever.perform
+    @retriever.sample
   end
 
   def hash_to_store_in_used_list_name(item)

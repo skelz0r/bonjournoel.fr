@@ -7,6 +7,8 @@ class AbstractSpreadsheet
     @data ||= rows_without_headers.map do |row|
       data = {}
 
+      next unless row[import_index].downcase == 'y'
+
       headers.to_a.each_with_index do |header, i|
         if headers == 'tags'
           data[header] = row[i].split(',').map(&:strip)
@@ -29,6 +31,10 @@ class AbstractSpreadsheet
 
   def headers
     @headers ||= content_tab.rows[0]
+  end
+
+  def import_index
+    headers.index('import') || (raise 'No import col')
   end
 
   def rows_without_headers
