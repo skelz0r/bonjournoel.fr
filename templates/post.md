@@ -1,5 +1,6 @@
 ---
 layout: christmas_post
+countdown: {{ countdown }}
 date: {{ date }}
 
 christmas_tree_image_url: {{ christmas_tree_image_url }}
