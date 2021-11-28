@@ -5,6 +5,42 @@ layout: default
   .subtitle {
     line-height: 2;
   }
+
+  .spotify-player {
+    margin-top: 30px;
+  }
+
+  @media (min-width: 576px) {
+    .block.first .top-block {
+      height: 25vh;
+    }
+
+    .block.first .middle-block {
+      height: 45vh;
+    }
+
+    .block.first .last-block {
+      height: 30vh;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .block.first .top-block {
+      height: 30vh;
+    }
+
+    .block.first .middle-block {
+      height: 45vh;
+    }
+
+    .block.first .last-block {
+      height: 25vh;
+    }
+
+    .first .line-svg {
+      display: inline-block;
+    }
+  }
 </style>
 
 <div class="container-fluid">
@@ -19,7 +55,7 @@ layout: default
           <div class="row line-container">
             <div class="col-sm-offset-4">
             </div>
-            <div class="col-sm-4">
+            <div class="col-xs-12 col-sm-4">
               {% include line.html %}
             </div>
           </div>
@@ -43,8 +79,29 @@ layout: default
           <div class="row line-container">
             <div class="col-sm-offset-4">
             </div>
-            <div class="col-sm-4">
+            <div class="col-xs-12 col-sm-4">
               {% include line.html %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row last-block">
+        <div class="col-xs-12">
+          <div class="row spotify-player">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                  <iframe
+                    src="https://open.spotify.com/embed/track/0bYg9bo50gSsH3LtXe2SQn?utm_source=generator&theme=0"
+                    width="100%"
+                    height="80"
+                    frameBorder="0"
+                    allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+                  </iframe>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -228,7 +228,6 @@ h1 img {
 
 .down-arrow-wrapper {
   text-align: center;
-  padding-top: 50px;
 }
 
 .down-arrow-wrapper img {
@@ -242,11 +241,11 @@ h1 img {
   }
 
   .block.first .middle-block {
-    height: 45vh;
+    height: 35vh;
   }
 
   .block.first .last-block {
-    height: 20vh;
+    height: 30vh;
   }
 }
 
