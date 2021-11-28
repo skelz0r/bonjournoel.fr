@@ -32,15 +32,21 @@ layout: default
 
   @media (max-width: 576px) {
     .block.first .top-block {
-      height: 30vh;
+      --h: 30vh;
+      height: var(--h);
+      height: calc(var(--h) - var(--vh-offset, 0px));
     }
 
     .block.first .middle-block {
-      height: 45vh;
+      --h: 45vh;
+      height: var(--h);
+      height: calc(var(--h) - var(--vh-offset, 0px));
     }
 
     .block.first .last-block {
-      height: 25vh;
+      --h: 25vh;
+      height: var(--h);
+      height: calc(var(--h) - var(--vh-offset, 0px));
     }
 
     .first .line-svg {
