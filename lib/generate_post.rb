@@ -24,7 +24,7 @@ class GeneratePost
     template = Liquid::Template.parse(File.read(post_template))
     variables = {
       'number' => date.day,
-      'countdown' => christmas_day.yday - day.yday,
+      'countdown' => christmas_day.yday - date.yday,
       'date' => date.to_time.to_s,
 
       'christmas_tree_image_url' => christmas_tree_image_url,
