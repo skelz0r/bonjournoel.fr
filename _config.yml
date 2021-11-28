@@ -30,6 +30,8 @@ twitter_username: BonjourNoel
 lang: "fr"
 language: "fr"
 
+permalink: /:day/index:output_ext
+
 # Build settings
 plugins:
   - jekyll-feed
