@@ -20,4 +20,10 @@ module Backend
       'cadeaux'
     end
   end
+
+  class ChristmasMovies < AbstractSpreadsheet
+    def tab_name
+      'movies'
+    end
+  end
 end

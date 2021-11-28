@@ -16,11 +16,11 @@ class ChristmasMovieRetriever < AbstractUniqueDataRetriever
   end
 
   def retrieve_data
-    @retriever ||= GetChristmasMovie.new(page: (date.day % 5) + 1)
+    @retriever ||= ::Backend::ChristmasMovies.new.data
     @retriever.perform
   end
 
   def hash_to_store_in_used_list_name(item)
-    item['id']
+    item['url']
   end
 end
