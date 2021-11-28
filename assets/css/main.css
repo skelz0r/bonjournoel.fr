@@ -181,6 +181,11 @@ img.picture {
   img.picture {
     max-width: calc(100% - 1rem);
   }
+
+  .block .line-svg {
+    margin-bottom: 30px;
+    width: 50%;
+  }
 }
 
 /* Header/screen intro */
@@ -246,7 +251,8 @@ h1 img {
 }
 
 @media (max-width: 576px) {
-  .line-svg, .star-svg, .down-arrow-wrapper { display: none; }
+  .first .line-svg { display: none; }
+  .star-svg, .down-arrow-wrapper { display: none; }
 
   .subtitle {
     margin-bottom: 20px;
