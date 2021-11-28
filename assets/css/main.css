@@ -7,8 +7,8 @@
   --brown-light: rgb(228, 211, 194);
   --blue-light: rgb(218, 235, 239);
   --radius: 50px;
-  --font-big: 36px;
-  --font-cta: 32px;
+  --font-big: 38px;
+  --font-cta: 30px;
 }
 
 /* Commons */
@@ -102,7 +102,7 @@ img.picture {
   padding-top: 10px;
   border-radius: 5px;
   text-decoration: none;
-  color: inherit;
+  color: var(--white);
 }
 
 .cta:hover {
@@ -286,6 +286,7 @@ h1 img {
 }
 .gift .cta {
   border-color: var(--red);
+  background-color: var(--red);
 }
 .gift svg.line-svg {
   fill: var(--red);
@@ -297,6 +298,7 @@ h1 img {
 }
 .recipe .cta {
   border-color: var(--green-dark);
+  background-color: var(--green-dark);
 }
 .recipe svg.line-svg {
   fill: var(--green-dark);
@@ -308,6 +310,7 @@ h1 img {
 }
 .movie .cta {
   border-color: var(--red);
+  background-color: var(--red);
 }
 .movie svg.line-svg {
   fill: var(--red);
