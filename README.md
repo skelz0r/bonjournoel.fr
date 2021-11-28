@@ -1,6 +1,6 @@
 # bonjournoel.fr [![Build](https://github.com/skelz0r/bonjournoel.fr/actions/workflows/build.yml/badge.svg)](https://github.com/skelz0r/bonjournoel.fr/actions/workflows/build.yml)
 
-Tous les jours de décembre, un sapin et une musique de Noël 🎄 🎅
+Your daily dose of christmas porn
 
 ## Requirements
 
