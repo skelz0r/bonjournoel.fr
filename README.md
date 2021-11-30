@@ -44,7 +44,7 @@ bundle exec ruby bin/generate_noel_post.rb
 
 ## Tweet today's noel
 
-Check `.env.local` for credentials
+Check `.env.example` for credentials
 
 Run:
 
