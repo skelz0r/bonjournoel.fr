@@ -1,0 +1,5 @@
+[#Noel J-{{countdown}}] Idée de film ou série #{{ 25 | minus:countdown }} : {{ movie_name}}
+
+#PopCornDeTraineau {% for tag in movie_tags %}#{{tag | downcase}} {% endfor %}
+
+https://www.bonjournoel.fr/#film

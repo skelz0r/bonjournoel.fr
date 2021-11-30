@@ -1,0 +1,5 @@
+[#Noel J-{{countdown}}] Idée de recette #{{ 25 | minus:countdown }} : {{ recipe_name }} 
+
+#AuFourEtAuSapin {% for tag in recipe_tags %}#{{tag | downcase}} {% endfor %}
+
+https://www.bonjournoel.fr/#recette

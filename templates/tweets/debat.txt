@@ -1,0 +1,5 @@
+[#Noel J-{{countdown}}] Sujet de discussion #{{ 25 | minus:countdown }} : {{ debat }}
+
+#DesOHOHOHEtDesDebats {#PosonsLes{Vraies|Bonnes}Questions|#YaPasDe{MauvaiseQuestion|Question{Idiote|Stupide}}|#DebatEn{Mousse|Beton|Carton|Papier}}
+
+{Des avis ?|A vos tweets|Vous en pensez quoi ?|Que va penser {Papy 👴|Mamie 👵 |Tonton 👨‍🦰 |Tata 👩‍🦱} ?} {👇|}
