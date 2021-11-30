@@ -25,7 +25,7 @@ class GeneratePost
     variables = {
       'number' => date.day,
       'countdown' => christmas_day.yday - date.yday,
-      'date' => (date.to_time + 8.hours).to_s,
+      'date' => (date.to_time + 8*60).to_s,
 
       'christmas_tree_image_url' => christmas_tree_image_url,
       'spotify_track_id' => spotify_track_id,
