@@ -1,0 +1,83 @@
+env:
+  CI: true
+  RUBY_VERSION: 2.7.2
+  GOOGLE_CREDENTIALS: secrets/google-credentials.json
+  GOOGLE_CREDENTIALS_BASE_64: ${{ secrets.GOOGLE_CREDENTIALS_BASE_64 }}
+  SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
+  SPOTIFY_CLIENT_SECRET: ${{ secrets.SPOTIFY_CLIENT_SECRET }}
+  UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+  THE_MOVIE_DATABASE_API_KEY: ${{ secrets.THE_MOVIE_DATABASE_API_KEY }}
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+
+name: Generate today post
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+
+jobs:
+  test:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: develop
+          token: ${{ env.ACCESS_TOKEN }}
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+
+      # - name: Setup tmate session (for debugging purpose)
+      #   uses: mxschmitt/action-tmate@v2
+
+      - name: Cache Gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Bundle install
+        run: |
+          gem install bundler
+          bundle config path vendor/bundle
+          bundler install --jobs 4 --retry 3
+
+      - name: Set current date in ENV
+        run: |
+          echo "CURRENT_DATE=`date +%Y-%m-%d`" >> $GITHUB_ENV
+
+      - name: Create json key for Google API
+        run: |
+          bundle exec ruby bin/decode_google_credentials_json_key.rb ${{ env.GOOGLE_CREDENTIALS_BASE_64 }} > ./secrets/google-credentials.json
+
+      - name: Create today post
+        run: |
+          bundle exec ruby bin/generate_post.rb ${{ env.CURRENT_DATE }}
+
+      - name: Clean build
+        run: |
+          rm -rf .bundle/
+          git checkout Gemfile.lock
+
+      - name: Create Pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Generate ${{ env.CURRENT_DATE }} post
+          branch: posts/${{ env.CURRENT_DATE }}
+          delete-branch: true
+          base: develop
+          title: Generate ${{ env.CURRENT_DATE }} post
+
+      # - name: Create and push on develop
+      #   uses: EndBug/add-and-commit@v7
+      #   with:
+      #     default_author: github_actions
+      #     branch: develop
+      #     message: Generate ${{ env.CURRENT_DATE }} platane
+      #     push: true
