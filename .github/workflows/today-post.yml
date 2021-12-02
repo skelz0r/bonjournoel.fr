@@ -13,7 +13,7 @@ name: Generate today post
 
 on:
   schedule:
-    - cron: "45 1 * * *"
+    - cron: "15 1 * * *"
 
 jobs:
   test:
