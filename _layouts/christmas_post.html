@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="container-fluid">
-  <div class="row block first">
+  <div class="row block full-screen first">
     <div class="col-xs-12">
       <h1 class="top-block center">
         <img src="/assets/images/title.svg" alt="Bonjour Noël" />
@@ -93,7 +93,7 @@ layout: default
     </div>
   </div>
 
-  <div id="sapin-et-debat" class="row block center christmas-tree-and-debat">
+  <div id="sapin-et-debat" class="row block full-screen center christmas-tree-and-debat">
     <div class="col-sm-2 star">
       <div class="bottom-align">
         <div class="wrapper">
@@ -135,7 +135,7 @@ layout: default
     </div>
   </div>
 
-  <div id="cadeau" class="row center gift block">
+  <div id="cadeau" class="row center gift block full-screen">
     <div class="col-sm-4 col-sm-offset-2">
       <div class="vertical-align">
         <div class="wrapper">
@@ -185,7 +185,7 @@ layout: default
     </div>
   </div>
 
-  <div id="recette" class="row recipe block">
+  <div id="recette" class="row recipe block full-screen">
     <div class="hide-xs col-sm-4 col-sm-offset-2">
       <div class="vertical-align">
         <div class="wrapper">
@@ -245,7 +245,7 @@ layout: default
     </div>
   </div>
 
-  <div id="film" class="row movie block">
+  <div id="film" class="row movie block full-screen">
     <div class="col-sm-2 star">
       <div class="top-align">
         <div class="wrapper">
@@ -297,9 +297,53 @@ layout: default
     <div class="col-sm-4 hide-xs">
       <div class="vertical-align">
         <div class="wrapper">
-          <a href="{{ page.movie_url }}">
             <img class="picture" src="{{ page.movie_image_url }}" />
           </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row block full-screen past-days">
+    <div class="col-sm-12 col-xs-12">
+      <h2>
+        C'était mieux <em>avent</em>
+      </h2>
+
+      {% include line.html %}
+    </div>
+
+    <div class="col-sm-2 star">
+      <div class="bottom-align">
+        <div class="wrapper">
+          {% include star.html %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-1 hide-xs"></div>
+
+    {% assign latest_posts = site.posts | sort: "date:desc" %}
+    {% for post in latest_posts limit:3 offset:1 %}
+      <div class="col-sm-3 col-xs-12">
+        <a class="past-day-link" href="{{ post.url }}">
+          <div class="past-day" style="background-image:url('{{ post.christmas_tree_image_url }}')">
+            <div class="day">
+              J-{{ post.countdown }}
+            </div>
+
+            <div class="overlay"></div>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+
+    <div class="col-sm-1 hide-xs"></div>
+
+    <div class="col-sm-2 star">
+      <div class="top-align">
+        <div class="wrapper">
+          {% include star.html %}
         </div>
       </div>
     </div>
