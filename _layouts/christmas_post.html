@@ -325,7 +325,7 @@ layout: default
       <div class="col-sm-1 hide-xs"></div>
 
       {% assign latest_posts = site.posts | sort: "date:desc" %}
-      {% for post in latest_posts limit:3 offset:1 %}
+      {% for post in latest_posts limit:2 offset:1 %}
         <div class="col-sm-3 col-xs-12">
           <a class="past-day-link" href="{{ post.url | remove: 'index.html' }}">
             <div class="past-day" style="background-image:url('{{ post.christmas_tree_image_url }}')">
