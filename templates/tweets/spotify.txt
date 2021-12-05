@@ -1,0 +1,7 @@
+[#Noel J-{{countdown}}] Musique #{{ 25 | minus:countdown }}
+
+{Une {petite |}{musique|track} pour {s'ambiancer|se mettre dans l'ambiance} 💃|C'est l'heure de s'ambiancer 👨‍🎤|Prêt pour le karaoké 🎤|Direct dans la playlist de Noël 👇}
+
+https://open.spotify.com/track/{{ spotify_track_id }}
+
+#ChansonDeNoel

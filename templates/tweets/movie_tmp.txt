@@ -1,0 +1,2 @@
+Le film du jour: {{ movie_name }}
+{% for tag in movie_tags %}#{{tag | downcase}} {% endfor %}

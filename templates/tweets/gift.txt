@@ -1,0 +1,7 @@
+[#Noel J-{{countdown}}] Idée cadeau #{{ 25 | minus:countdown }}: {{ gift_name }}
+
+{Garantie sans Amazon|Y'en a pour tous les goûts|Y'a plus qu'à l'emballer|Hop dans la hotte}
+
+#CaCestCadeau #CadeauDeNoel {% for tag in gift_tags %}#{{tag | downcase}} {% endfor %}
+
+https://www.bonjournoel.fr/#cadeau

@@ -1,0 +1,1 @@
+{{ recipe_image_url }}
