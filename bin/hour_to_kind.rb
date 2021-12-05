@@ -14,7 +14,7 @@ when (12..13)
 when (14..15)
   :spotify
 when (16..17)
-  :recipe
+  :recette
 when (18..19)
   :movie
 else
