@@ -9,7 +9,8 @@
   --radius: 50px;
   --font-big: 38px;
   --font-cta: 30px;
-  --past-day-card-height: 480px;
+  --past-day-card-height: 580px;
+  --past-day-card-height-xs: 480px;
 }
 
 /* Commons */
@@ -289,6 +290,27 @@ h1 img {
   background-size: cover;
   background-position: center center;
   margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+  .past-days .past-day {
+    min-height: var(--past-day-card-height-xs);
+  }
+}
+
+
+.past-days-wrapper {
+  overflow-y: hidden;
+  flex-wrap: inherit;
+}
+
+.past-days-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.past-days-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .past-days .past-day .overlay,
