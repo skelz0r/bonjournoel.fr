@@ -330,6 +330,19 @@ h1 img {
   fill: var(--green-dark);
 }
 
+.footer {
+  padding: 50px 0;
+  font-family: monospace;
+}
+
+.footer a {
+  color: var(--green-dark);
+}
+
+.footer a:hover {
+  color: var(--green-light);
+}
+
 /* Blocks */
 .spotify-player {
   margin: 20px 0;
