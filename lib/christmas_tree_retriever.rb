@@ -16,7 +16,7 @@ class ChristmasTreeRetriever < AbstractUniqueDataRetriever
   end
 
   def retrieve_data
-    @retriever ||= GetChristmasTree.new(page: date.day).images
+    @retriever ||= GetChristmasTree.new(page: date.day % 5).images
     @retriever.sample
   end
 
