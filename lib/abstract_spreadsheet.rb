@@ -18,7 +18,7 @@ class AbstractSpreadsheet
       end
 
       data
-    end
+    end.compact
   end
 
   protected
