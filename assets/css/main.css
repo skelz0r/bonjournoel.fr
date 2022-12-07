@@ -188,6 +188,11 @@ img.picture {
 
   p.big {
     line-height: 1.5;
+
+    hyphens: auto;
+    webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
   }
 
   img.picture {
