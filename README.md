@@ -39,7 +39,7 @@ Then visit `http://127.0.0.1:4000/`
 Run:
 
 ```sh
-bundle exec ruby bin/generate_noel_post.rb
+bundle exec ruby bin/generate_post.rb
 ```
 
 ## Tweet today's noel
